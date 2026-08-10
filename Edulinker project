@@ -1,0 +1,101 @@
+**Title of the project :**
+•	 Smart Student & Parent Management System
+•	Designed and developed a web-based platform to streamline the academic and administrative system and parent-student interaction.
+• The system allows leave management, academic monitoring,     notifications, and efficient communication through an intuitive user interface.
+
+
+**Description:**
+Edulinkr – Educational Management System is a web-based platform designed to simplify and centralize educational information management. It provides a common platform for students, parents, and administrators to access important academic information and educational updates.
+
+The system allows users to access student profiles, marks, GPA, courses, events, and industry updates through a simple and user-friendly interface. Administrators can manage educational information, while parents can conveniently monitor their student's academic progress.
+
+The main objective of Edulinkr is to improve access to academic information, simplify educational management, and strengthen communication between students, parents, and administrators.
+
+** Live Demo link :**
+https://accademy-link-wise.lovable.app/
+
+
+**Features:**
+### Parent Access
+
+- View student profile
+- View student marks
+- View academic progress
+- Check upcoming events
+- Read industry updates
+
+### Administrator Access
+
+- Manage students
+- Manage courses
+- Assign courses
+- Update student marks
+- Create events
+- Manage industry updates
+
+### Academic Management
+
+- Student academic information
+- Marks and GPA
+- Course management
+- Academic progress tracking
+
+### Events and Updates
+
+- Upcoming events
+-  Educational updates
+- Industry news and updates
+
+### General Features
+
+- User-friendly interface
+- Role-based access
+- Centralized educational information
+- Easy navigation
+- Parent and administrator access
+
+---
+
+## 4. Technologies Used
+
+### Frontend
+
+- HTML
+- CSS
+- JavaScript
+
+### Application Development
+
+- Lovable
+- React
+- Vite
+
+### Version Control
+ GitHub
+
+
+** How To Run**
+Direct Access to the link
+
+**Future Enhancements**
+
+Student login and personalized student dashboard
+Attendance management
+Assignment management
+Online examination support
+Parent-teacher communication
+Automated notifications
+Advanced student performance analytics
+Academic report generation
+Mobile application support
+Enhanced role-based access control
+Cloud-based database integration
+Improved security and authentication
+Integration with additional educational services
+
+**Project Objective**
+
+The objective of EDULINKR is to provide a centralized educational
+management platform that improves access to academic information and
+strengthens communication between students, parents, and
+administrators.
