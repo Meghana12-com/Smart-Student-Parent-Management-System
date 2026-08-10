@@ -1,0 +1,8 @@
+package com.example.studentmanagement.repository;
+
+import com.example.studentmanagement.model.LeaveRequest;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LeaveRepository
+        extends JpaRepository<LeaveRequest, Long> {
+}
