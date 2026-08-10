@@ -1,0 +1,45 @@
+Recommanded Project Structure
+Smart-Student-Parent-Management-System/
+│
+├── backend/
+│   └── src/main/java/com/studentmanagement/
+│       ├── controller/
+│       │   ├── LoginController.java
+│       │   ├── StudentController.java
+│       │   ├── ParentController.java
+│       │   ├── LeaveController.java
+│       │   ├── AcademicController.java
+│       │   └── NotificationController.java
+│       │
+│       ├── model/
+│       │   ├── Student.java
+│       │   ├── Parent.java
+│       │   ├── Leave.java
+│       │   ├── Academic.java
+│       │   └── Notification.java
+│       │
+│       ├── repository/
+│       │   ├── StudentRepository.java
+│       │   ├── ParentRepository.java
+│       │   ├── LeaveRepository.java
+│       │   └── NotificationRepository.java
+│       │
+│       └── StudentManagementApplication.java
+│
+├── frontend/
+│   ├── index.html
+│   ├── login.html
+│   ├── student-dashboard.html
+│   ├── parent-dashboard.html
+│   ├── leave.html
+│   ├── academics.html
+│   ├── notifications.html
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+│
+├── database/
+│   └── database.sql
+│
+└── README.md
