@@ -1,0 +1,61 @@
+package com.example.studentmanagement.controller;
+
+import com.example.studentmanagement.model.LeaveRequest;
+import com.example.studentmanagement.repository.LeaveRepository;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/leaves")
+@CrossOrigin
+public class LeaveController {
+
+    private final LeaveRepository leaveRepository;
+
+    public LeaveController(LeaveRepository leaveRepository) {
+        this.leaveRepository = leaveRepository;
+    }
+
+    @GetMapping
+    public List<LeaveRequest> getLeaves() {
+        return leaveRepository.findAll();
+    }
+
+    @PostMapping
+    public LeaveRequest applyLeave(
+            @RequestBody LeaveRequest leave) {
+
+        leave.setStatus("PENDING");
+
+        return leaveRepository.save(leave);
+    }
+
+    @PutMapping("/{id}/approve")
+    public LeaveRequest approveLeave(
+            @PathVariable Long id) {
+
+        LeaveRequest leave =
+                leaveRepository.findById(id)
+                        .orElseThrow(() ->
+                                new RuntimeException("Leave not found"));
+
+        leave.setStatus("APPROVED");
+
+        return leaveRepository.save(leave);
+    }
+
+    @PutMapping("/{id}/reject")
+    public LeaveRequest rejectLeave(
+            @PathVariable Long id) {
+
+        LeaveRequest leave =
+                leaveRepository.findById(id)
+                        .orElseThrow(() ->
+                                new RuntimeException("Leave not found"));
+
+        leave.setStatus("REJECTED");
+
+        return leaveRepository.save(leave);
+    }
+}
