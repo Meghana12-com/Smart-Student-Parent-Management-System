@@ -1,0 +1,30 @@
+Academic.java
+AcademicRepository.java
+AcademicController.java
+
+Student marks
+Attendance
+Subject
+Semester
+Percentage
+Performance
+
+Notification.java
+NotificationRepository.java
+NotificationController.java
+
+Message.java
+MessageRepository.java
+MessageController.java
+
+Student → Parent
+Parent → Student
+Admin → Student/Parent
+
+Total Students
+Total Parents
+Pending Leaves
+Attendance
+Academic Performance
+Latest Notifications
+Messages
