@@ -1,0 +1,63 @@
+package com.example.studentmanagement.controller;
+
+import com.example.studentmanagement.model.Parent;
+import com.example.studentmanagement.repository.ParentRepository;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/parents")
+@CrossOrigin
+public class ParentController {
+
+    private final ParentRepository parentRepository;
+
+    public ParentController(ParentRepository parentRepository) {
+        this.parentRepository = parentRepository;
+    }
+
+    @GetMapping
+    public List<Parent> getParents() {
+        return parentRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Parent getParent(@PathVariable Long id) {
+        return parentRepository.findById(id)
+                .orElseThrow(() ->
+                        new RuntimeException("Parent not found"));
+    }
+
+    @PostMapping
+    public Parent addParent(@RequestBody Parent parent) {
+        return parentRepository.save(parent);
+    }
+
+    @PutMapping("/{id}")
+    public Parent updateParent(
+            @PathVariable Long id,
+            @RequestBody Parent parent) {
+
+        Parent existing =
+                parentRepository.findById(id)
+                        .orElseThrow(() ->
+                                new RuntimeException("Parent not found"));
+
+        existing.setName(parent.getName());
+        existing.setEmail(parent.getEmail());
+        existing.setPhone(parent.getPhone());
+        existing.setOccupation();
+        existing.setStudentId(parent.getStudentId());
+
+        return parentRepository.save(existing);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteParent(@PathVariable Long id) {
+
+        parentRepository.deleteById(id);
+
+        return "Parent deleted successfully";
+    }
+}
