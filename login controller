@@ -1,0 +1,41 @@
+controller/LoginController.java
+package com.example.studentmanagement.controller;
+
+import com.example.studentmanagement.model.User;
+import com.example.studentmanagement.repository.UserRepository;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/auth")
+@CrossOrigin
+public class LoginController {
+
+    private final UserRepository userRepository;
+
+    public LoginController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody User loginUser) {
+
+        Optional<User> user =
+                userRepository.findByUsername(loginUser.getUsername());
+
+        if (user.isPresent()) {
+
+            User existingUser = user.get();
+
+            if (existingUser.getPassword()
+                    .equals(loginUser.getPassword())) {
+
+                return "Login successful. Role: "
+                        + existingUser.getRole();
+            }
+        }
+
+        return "Invalid username or password";
+    }
+}
